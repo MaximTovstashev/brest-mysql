@@ -1,4 +1,38 @@
 {
-  "name": "application-name",
-  "version": "0.0.1"
+  "author": {
+    "name": "Max Kitsch",
+    "email": "max.kitsch@gmail.com"
+  },
+  "name": "brest-mysql",
+  "version": "0.0.1",
+  "description": "MySQL layer with some bREST API binding",
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/MaximTovstashev/brest-mysql.git"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "async": "*",
+    "lodash": "*",
+    "mysql": "*"
+  },
+  "devDependencies": {
+    "async": "*",
+    "lodash": "*",
+    "mysql": "*"
+  },
+  "keywords": [
+    "api",
+    "app",
+    "brest",
+    "express",
+    "mysql",
+    "rest",
+    "restful",
+    "validate"
+  ],
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
 }
