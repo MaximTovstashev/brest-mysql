@@ -4,7 +4,7 @@
     "email": "max.kitsch@gmail.com"
   },
   "name": "brest-mysql",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "MySQL layer with some bREST API binding",
   "repository": {
     "type": "git",
