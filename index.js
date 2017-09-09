@@ -1,5 +1,5 @@
-var DB = require('./lib/db');
-var _ = require('lodash');
+const DB = require('./lib/db');
+const _ = require('lodash');
 
 /**
  *
@@ -7,10 +7,10 @@ var _ = require('lodash');
  * @returns Table
  * @constructor
  */
-var BrestMySQL = function(tableName)
+const BrestMySQL = function(tableName)
 {
-    if (tableName) return BrestMySQL.db.table(tableName);
-    else return BrestMySQL.db.table;
+  if (tableName) return BrestMySQL.db.table(tableName);
+  else return BrestMySQL.db.table;
 };
 
 /**
@@ -19,7 +19,7 @@ var BrestMySQL = function(tableName)
  * @param methodName
  * @returns {Function}
  */
-var tableMethod = function(tableName, methodName){
+const tableMethod = function(tableName, methodName){
     return function(){
         if (BrestMySQL.db.table && BrestMySQL.db.table(tableName) && BrestMySQL.db.table(tableName)[methodName]){
             BrestMySQL.db.table(tableName)[methodName].apply(BrestMySQL.db.table(tableName), arguments);
@@ -36,17 +36,18 @@ var tableMethod = function(tableName, methodName){
  * @returns {Object}
  */
 BrestMySQL.controller = function(tableName, controller){
-    var defaults = {};
+    const defaults = {};
     ['row','list','insert','update','del'].forEach(function(m){defaults[m] = tableMethod(tableName, m)});
     return _.defaults(controller, defaults);
 };
 
 /**
  * Init BrestMySQL with brest instance
- * @param {Brest} brest
+ * @param {Object} brest Brest object
  * @param {Function} callback
  */
-BrestMySQL.init = function(brest, callback) {
+BrestMySQL.before_api_init = function(brest, callback) {
+  console.log('init MySQL');
     BrestMySQL.db = new DB(brest.getSetting('mysql'));
     brest.db = BrestMySQL.db;
     BrestMySQL.db.on('error', function(err) {callback(err)});

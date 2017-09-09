@@ -4,7 +4,7 @@
     "email": "max.kitsch@gmail.com"
   },
   "name": "brest-mysql",
-  "version": "0.0.4",
+  "version": "1.0.0-alpha.1",
   "description": "MySQL layer with some bREST API binding",
   "repository": {
     "type": "git",
@@ -12,11 +12,6 @@
   },
   "main": "index.js",
   "dependencies": {
-    "async": "*",
-    "lodash": "*",
-    "mysql": "*"
-  },
-  "devDependencies": {
     "async": "*",
     "lodash": "*",
     "mysql": "*"
